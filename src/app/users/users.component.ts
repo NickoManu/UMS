@@ -2,6 +2,26 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "app-users",
-  template: "<h2>Users</h2>"
+  templateUrl: "./users.component.html",
+  styleUrls: ["./users.component.css"]
 })
-export class UsersComponent {}
+export class UsersComponent {
+  title = "users";
+
+  users = [
+    {
+      nome: "Luca",
+      cognome: "Rossi"
+    },
+
+    {
+      nome: "Mario",
+      cognome: "Rossi"
+    },
+
+    {
+      nome: "Lucia",
+      cognome: "Rossi"
+    }
+  ];
+}
