@@ -5,10 +5,9 @@
 		<th>Nome</th>
 		<th>Cognome</th>
 	</tr>
-
-	<tr *ngFor="let user of users">
-		<td>{{user.nome}}</td>
-		<td>{{user.cognome}}</td>
-	</tr>
+  
+  <tr *ngFor="let user of users">
+    <app-user [user-data] = "user"></app-user>
+  </tr>
 
 </table>

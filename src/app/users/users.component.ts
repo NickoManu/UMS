@@ -1,27 +1,20 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { UserService } from "./user.service";
 
 @Component({
   selector: "app-users",
   templateUrl: "./users.component.html",
   styleUrls: ["./users.component.css"]
 })
-export class UsersComponent {
+export class UsersComponent implements OnInit {
   title = "users";
+  users = [];
 
-  users = [
-    {
-      nome: "Luca",
-      cognome: "Rossi"
-    },
+  constructor(private service: UserService) {
+    
+  }
 
-    {
-      nome: "Mario",
-      cognome: "Rossi"
-    },
-
-    {
-      nome: "Lucia",
-      cognome: "Rossi"
-    }
-  ];
+  ngOnInit() {
+    this.users = this.service.getUsers();
+  }
 }
