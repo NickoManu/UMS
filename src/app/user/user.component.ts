@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter,  Input, OnInit, Output } from "@angular/core";
 import { UserService } from "../users/user.service";
 
 @Component({
@@ -8,13 +8,15 @@ import { UserService } from "../users/user.service";
 })
 export class UserComponent implements OnInit {
   @Input("user-data") user;
+  @Output('onDeleteUser') userDeleted = new EventEmitter();
 
   constructor(private userService: UserService) {}
 
   ngOnInit() {}
 
   deleteUser(user){
-    this.userService.deleteUser(this.user);
+    this.userDeleted.emit(this.user);
+   // this.userService.deleteUser(this.user);
   }
 
 }
