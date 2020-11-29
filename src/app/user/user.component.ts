@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { UserService } from "../users/user.service";
 
 @Component({
   selector: "tr[app-user]",
@@ -8,12 +9,12 @@ import { Component, Input, OnInit } from "@angular/core";
 export class UserComponent implements OnInit {
   @Input("user-data") user;
 
-  constructor() {}
+  constructor(private userService: UserService) {}
 
   ngOnInit() {}
 
   deleteUser(user){
-    alert(user.cognome);
+    this.userService.deleteUser(this.user);
   }
 
 }
