@@ -11,4 +11,9 @@ export class UserComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  deleteUser(user){
+    alert(user.cognome);
+  }
+
 }
